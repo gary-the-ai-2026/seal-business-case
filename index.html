@@ -194,6 +194,23 @@ tr.total-row td:first-child{color:var(--coral);}
 .summary .card .val.pos{color:var(--coral);}
 .summary .card .sub{font-size:.8rem;color:var(--muted);margin-top:12px;}
 
+/* ---------- EQUITY (fund it with the Golf) ---------- */
+.equity{
+  margin-top:52px;border-radius:var(--radius-card);border:1px solid var(--hairline);
+  background:var(--surface);padding:36px 32px;box-shadow:var(--shadow-rest);
+  border-left:3px solid var(--coral);
+}
+.equity .kicker{color:var(--coral);}
+.equity-head h4{font-family:var(--font-body);font-size:1.25rem;font-weight:800;color:var(--ink);line-height:1.25;margin-bottom:6px;}
+.equity-grid{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:28px;align-items:center;margin-top:24px;}
+@media(max-width:700px){.equity-grid{grid-template-columns:1fr;gap:18px;text-align:center;}.eq-arrow{transform:rotate(90deg);}}
+.eq-cell .rl{font-family:var(--font-body);font-size:.68rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+.eq-cell .rv{font-family:var(--font-body);font-size:clamp(1.5rem,2.6vw,2rem);font-weight:900;line-height:1.15;color:var(--ink);margin-top:10px;}
+.eq-cell .rv.pos{color:var(--coral);}
+.eq-cell .rs{font-size:.82rem;color:var(--body);margin-top:8px;}
+.eq-arrow{color:var(--coral);font-size:1.4rem;font-weight:700;}
+.eq-note{font-size:.76rem;color:var(--muted);margin-top:18px;line-height:1.6;}
+
 /* ---------- VERDICT ---------- */
 .verdict{
   margin-top:40px;text-align:center;padding:52px 34px;border-radius:var(--radius-card);
@@ -382,11 +399,38 @@ footer p+p{margin-top:8px;}
       </div>
     </div>
 
+    <div class="equity reveal">
+      <div class="equity-head">
+        <div class="kicker">Sell what you already own</div>
+        <h4>The Golf funds part of the SEAL.</h4>
+      </div>
+      <div class="equity-grid">
+        <div class="eq-cell">
+          <div class="rl">Your current car</div>
+          <div class="rv">2016 Golf MK7 BlueMotion</div>
+          <div class="rs">Black · approx 50,000 km · 1.4 TSI petrol</div>
+        </div>
+        <div class="eq-arrow">→</div>
+        <div class="eq-cell">
+          <div class="rl">Realised if sold</div>
+          <div class="rv pos">~$16,000</div>
+          <div class="rs">Private sale est. · $14k to $18k · trade-in ~$12k</div>
+        </div>
+        <div class="eq-arrow">→</div>
+        <div class="eq-cell">
+          <div class="rl">Net to hold the SEAL</div>
+          <div class="rv pos">~$16,400</div>
+          <div class="rs">$32,400 SEAL cost − $16,000 Golf proceeds</div>
+        </div>
+      </div>
+      <p class="eq-note">Est. private-sale value from carsguide &amp; carsales 2016 Golf 1.4 TSI indicative bands (~$13,400 to $17,600 for a Highline), with a premium for your below-average kilometres. Assumes the Golf is owned outright; a trade-in would realise roughly $12,000. Indicative, not a guaranteed sale price.</p>
+    </div>
+
     <div class="verdict reveal">
       <div class="rl">What the SEAL really costs you</div>
       <div class="rv">~$32,400</div>
       <div class="rv-sub">while you hold it · or ~$6,100 if you sell it at year five</div>
-      <div class="rw">One purchase, two automatic refunds, zero FBT on private use, and a car that still holds real value when the books say zero.</div>
+      <div class="rw">One purchase, two automatic refunds, zero FBT on private use, and a car that still holds real value when the books say zero. Sell your Golf (~$16,000) and the net switch to hold the SEAL is ~$16,400.</div>
     </div>
   </div>
 </section>
