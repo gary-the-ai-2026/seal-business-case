@@ -3,239 +3,234 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The BYD SEAL Case | Buy it through the business</title>
+<title>The BYD SEAL Case · Buy it through the business</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cambo&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;900&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   SNOWARK DESIGN SYSTEM  (light build)
-   White / warm-gray / teal. Green = the single accent.
-   Dark-section family reserved for the closing band + footer only.
+   HANCOCK FAMILY DESIGN SYSTEM  (v1.1)
+   Cream canvas, one coral accent, Cormorant + Inter + JetBrains.
+   Light only. 8pt grid. 60-30-10. Generous whitespace.
    ============================================================ */
 :root{
-  /* Core */
-  --teal:#174445;
-  --teal-deep:#0e2929;
-  --green:#0d8f64;
-  --green-bright:#0ca06f;
-  --warm:#e9e7e3;
-  --white:#ffffff;
-  --black:#000000;
-  --body:#333333;
-  --muted:#5b6868;
-  --hairline:rgba(0,0,0,0.08);
-
-  /* Dark-section accents (closing band + footer only) */
-  --ink:#0b2021;
-  --teal-lift:#2a7f80;
-  --green-lift:#4cc296;
-  --mist:rgba(233,231,227,0.78);
-  --dark-grad:linear-gradient(180deg,#0d2d2e 0%,#123a3b 50%,#0d2d2e 100%);
-
-  /* Layout & type */
-  --maxw:1080px;
-  --readw:64ch;
-  --font-head:'Cambo', Georgia, 'Times New Roman', serif;
-  --font-body:'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --canvas:#faf9f5;
+  --surface:#ffffff;
+  --surface-alt:#f0eeea;
+  --ink:#141413;
+  --body:#5c5a55;
+  --muted:#94918a;
+  --hairline:#e4e1db;
+  --hairline-soft:#ece9e4;
+  --coral:#cc785c;
+  --coral-hover:#a9583e;
+  --coral-tint:rgba(204,120,92,0.06);
+  --coral-border:rgba(204,120,92,0.35);
+  --success:#1b8a3d;
+  --warning:#d4a017;
+  --radius-card:20px;
+  --radius-table:16px;
+  --radius-btn:6px;
+  --font-display:'Cormorant Garamond', Georgia, serif;
+  --font-body:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+  --shadow-rest:0 1px 3px rgba(0,0,0,0.04);
+  --shadow-hover:0 12px 40px rgba(0,0,0,0.08);
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
 :root{font-synthesis:none;font-size-adjust:from-font;}
-h1,h2,h3{text-wrap:balance;}
-p{text-wrap:pretty;}
-
+html{scroll-behavior:smooth;}
 body{
   font-family:var(--font-body);
+  background:var(--canvas);
   color:var(--body);
-  background:var(--white);
-  font-size:1rem;
-  line-height:1.7;
+  font-size:.95rem;
+  line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
 img{max-width:100%;display:block;}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
-a{color:var(--green);text-decoration:none;}
-a:hover{text-decoration:underline;}
+a{color:var(--coral);text-decoration:none;}
+a:hover{color:var(--coral-hover);text-decoration:underline;}
+h1,h2,h3{text-wrap:balance;}
+p{text-wrap:pretty;}
+::selection{background:rgba(204,120,92,0.22);}
 
-/* Reveal on scroll */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.22,.61,.36,1),transform .6s cubic-bezier(.22,.61,.36,1);}
+.wrap{max-width:960px;margin:0 auto;padding:0 32px;}
+@media(max-width:700px){.wrap{padding:0 20px;}}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,.61,.36,1);}
 .reveal.in{opacity:1;transform:none;}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
 
-/* Eyebrow */
-.eyebrow{
-  font-family:var(--font-body);font-size:.72rem;font-weight:700;
-  letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:22px;
+/* Kicker */
+.kicker{
+  font-family:var(--font-body);font-size:.72rem;font-weight:600;
+  letter-spacing:3px;text-transform:uppercase;color:var(--coral);margin-bottom:20px;
 }
-.on-dark .eyebrow{color:var(--green-lift);}
 
-/* ---------- NAV (light, always) ---------- */
+/* ---------- NAV ---------- */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:60;
-  background:rgba(255,255,255,0.9);backdrop-filter:blur(10px);
-  padding:18px 0;transition:padding .3s;border-bottom:1px solid var(--hairline);
+  background:rgba(250,249,245,0.9);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--hairline-soft);padding:16px 0;
 }
 nav .wrap{display:flex;align-items:center;justify-content:space-between;}
-.brand{font-family:var(--font-head);color:var(--teal);font-size:1.08rem;letter-spacing:.02em;}
-.brand .accent{color:var(--green);}
-.brand .meta{color:var(--muted);font-family:var(--font-body);font-weight:400;font-size:.82rem;letter-spacing:.02em;}
+.brand{font-family:var(--font-body);font-size:.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ink);}
+.brand .accent{color:var(--coral);}
+.brand .meta{color:var(--muted);font-weight:500;}
+.brand .divider{margin:0 8px;color:var(--muted);}
 nav a.cta{
-  color:#fff;text-decoration:none;font-weight:700;font-size:.84rem;
-  padding:10px 22px;background:var(--green);border-radius:10px;
-  transition:background .3s,box-shadow .3s;letter-spacing:.02em;white-space:nowrap;
+  color:#fff;font-weight:700;font-size:.8rem;
+  padding:10px 22px;background:var(--coral);border-radius:var(--radius-btn);
+  transition:background .25s;letter-spacing:.01em;white-space:nowrap;
 }
-nav a.cta:hover{background:var(--green-bright);box-shadow:0 6px 16px rgba(13,143,100,.22);text-decoration:none;}
+nav a.cta:hover{background:var(--coral-hover);text-decoration:none;}
 
-/* ---------- HERO (light, on-brand) ---------- */
-.hero{
-  position:relative;overflow:hidden;
-  background:linear-gradient(180deg,#ffffff 0%,#faf8f4 100%);
-}
-.hero-bg{position:absolute;inset:0;z-index:0;opacity:.6;pointer-events:none;}
-.hero-bg svg{width:100%;height:100%;}
-.hero-content{position:relative;z-index:3;padding:132px 0 64px;}
+/* ---------- HERO ---------- */
+.hero{position:relative;overflow:hidden;padding:128px 0 72px;background:var(--canvas);}
 .hero h1{
-  font-family:var(--font-head);font-weight:400;color:var(--teal);
-  font-size:clamp(2.5rem,5.8vw,4.4rem);line-height:1.06;max-width:16ch;letter-spacing:.003em;
+  font-family:var(--font-display);font-weight:900;color:var(--ink);
+  font-size:clamp(2.5rem,5.6vw,3.9rem);line-height:1.1;max-width:17ch;letter-spacing:-.01em;
 }
-.hero h1 .accent{color:var(--green);}
-.hero-sub{margin-top:26px;max-width:52ch;font-size:1.18rem;color:#263335;line-height:1.6;}
-.hero-sub strong{color:var(--teal-deep);font-weight:700;}
-.hero-thin{font-size:.88rem;color:var(--muted);margin-top:22px;max-width:58ch;}
-.hero-actions{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap;align-items:center;}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;border-radius:10px;font-weight:700;font-size:.95rem;text-decoration:none;border:1px solid transparent;transition:all .3s;letter-spacing:.01em;cursor:pointer;}
-.btn-primary{background:var(--green);color:#fff;box-shadow:0 8px 22px rgba(13,143,100,.28);}
-.btn-primary:hover{background:var(--green-bright);box-shadow:0 10px 26px rgba(13,143,100,.4);transform:translateY(-1px);text-decoration:none;}
-.btn-ghost{border:1px solid var(--teal);color:var(--teal);background:transparent;}
-.btn-ghost:hover{background:rgba(23,68,69,.06);color:var(--teal-deep);text-decoration:none;}
-.hero-photo{margin-top:52px;border-radius:12px;padding:30px 24px;background:var(--warm);border:1px solid var(--hairline);}
+.hero h1 .accent{color:var(--coral);}
+.hero-sub{margin-top:26px;max-width:52ch;font-size:1.02rem;color:var(--body);line-height:1.6;}
+.hero-sub strong{color:var(--ink);font-weight:700;}
+.hero-thin{margin-top:20px;font-size:.78rem;color:var(--muted);max-width:58ch;}
+.hero-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;align-items:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:14px 30px;border-radius:var(--radius-btn);font-weight:600;font-size:.9rem;text-decoration:none;
+  border:1px solid transparent;transition:all .25s;letter-spacing:.01em;cursor:pointer;
+}
+.btn-primary{background:var(--coral);color:#fff;box-shadow:0 4px 14px rgba(204,120,92,0.28);}
+.btn-primary:hover{background:var(--coral-hover);color:#fff;box-shadow:0 8px 20px rgba(204,120,92,0.34);transform:translateY(-1px);text-decoration:none;}
+.btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent;}
+.btn-ghost:hover{background:var(--ink);color:#fff;text-decoration:none;}
+.hero-photo{margin-top:48px;border-radius:var(--radius-card);padding:32px 24px;background:var(--surface-alt);border:1px solid var(--hairline-soft);box-shadow:var(--shadow-rest);}
 .hero-photo img{width:100%;height:auto;}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;border-top:1px solid var(--hairline);padding-top:30px;}
-.hstat .n{font-family:var(--font-head);font-size:clamp(1.7rem,3.2vw,2.5rem);color:var(--teal);line-height:1.1;font-variant-numeric:tabular-nums;}
-.hstat .n sup{font-size:.55em;color:var(--green);}
-.hstat .l{font-size:.74rem;color:var(--muted);letter-spacing:.05em;margin-top:9px;text-transform:uppercase;font-weight:700;}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;border-top:1px solid var(--hairline);padding-top:32px;}
+.hstat .n{font-family:var(--font-body);font-size:clamp(2rem,3.2vw,2.6rem);font-weight:900;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;}
+.hstat .n sup{font-size:.5em;color:var(--coral);font-weight:700;}
+.hstat .n .cur{color:var(--muted);font-size:.55em;font-weight:500;}
+.hstat .l{margin-top:12px;font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
 
-/* ---------- SECTION COMMON (light) ---------- */
-.section{padding:104px 0;}
-.section.warm{background:var(--warm);}
-.sec-h{font-family:var(--font-head);font-weight:400;font-size:clamp(1.8rem,3.4vw,2.8rem);line-height:1.18;max-width:22ch;text-wrap:balance;color:var(--teal);}
-.sec-lead{max-width:var(--readw);margin-top:20px;font-size:1.08rem;color:var(--muted);}
-.sec-intro{margin-bottom:56px;}
-@media (max-width:640px){.section{padding:72px 0;}}
+/* ---------- SECTIONS ---------- */
+.section{padding:96px 0;}
+.section.alt{background:var(--surface-alt);}
+@media(max-width:700px){.section{padding:64px 0;}}
+.sec-title{font-family:var(--font-body);font-size:clamp(1.5rem,3.2vw,2rem);font-weight:800;line-height:1.2;color:var(--ink);max-width:26ch;}
+.sec-lead{margin-top:18px;max-width:62ch;font-size:.95rem;color:var(--body);}
+.sec-head{margin-bottom:56px;}
 
-/* ---------- PROPOSITION ---------- */
-.props{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
-.prop{background:var(--white);border-radius:12px;padding:38px 32px;border:1px solid var(--hairline);box-shadow:0 1px 6px rgba(0,0,0,0.03);transition:transform .3s,box-shadow .3s;}
-.prop:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,0.07);}
-.prop .num{font-family:var(--font-head);font-size:2.4rem;color:var(--teal);line-height:1;}
-.prop .num small{font-size:.5em;color:var(--green);font-family:var(--font-body);}
-.prop h3{font-size:1.15rem;font-weight:700;color:var(--teal-deep);margin-top:18px;}
-.prop p{font-size:.96rem;color:var(--muted);margin-top:10px;line-height:1.62;}
+/* ---------- PILLARS ---------- */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:700px){.pillars{grid-template-columns:1fr;}}
+.pillar{
+  background:var(--surface);border:1px solid var(--hairline);border-radius:var(--radius-card);
+  padding:32px 28px;box-shadow:var(--shadow-rest);transition:transform .25s,box-shadow .25s,border-color .25s;
+}
+.pillar:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover);border-color:var(--coral-border);}
+.pillar .num{font-family:var(--font-body);font-size:2.4rem;font-weight:900;line-height:1;color:var(--coral);}
+.pillar .num small{font-size:.5em;color:var(--muted);font-weight:700;}
+.pillar h3{margin-top:18px;font-size:1.15rem;font-weight:700;color:var(--ink);line-height:1.3;}
+.pillar p{margin-top:12px;font-size:.88rem;color:var(--body);line-height:1.6;}
 
-/* ---------- SHOWCASE (clean light image + caption) ---------- */
-.showcase-wrap{margin-bottom:56px;}
-.showcase-frame{border-radius:12px;overflow:hidden;border:1px solid var(--hairline);box-shadow:0 2px 8px rgba(0,0,0,0.03);}
-.showcase-frame img{width:100%;height:auto;object-fit:cover;}
-.showcase-cap{margin-top:26px;max-width:var(--readw);}
-.showcase-cap h2{font-family:var(--font-head);font-weight:400;font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.2;color:var(--teal);text-wrap:balance;}
-.showcase-cap p{margin-top:12px;color:var(--muted);font-size:1.04rem;}
+/* ---------- STANDOUT PHOTO ---------- */
+.photo-frame{border-radius:var(--radius-card);overflow:hidden;border:1px solid var(--hairline);box-shadow:var(--shadow-rest);background:var(--surface);}
+.photo-frame img{width:100%;height:auto;}
+.photo-cap{margin-top:24px;max-width:62ch;text-align:center;margin-left:auto;margin-right:auto;}
+.photo-cap .eyebrow{font-family:var(--font-body);font-size:.72rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.photo-cap h3{font-family:var(--font-body);font-size:1.5rem;font-weight:800;color:var(--ink);line-height:1.25;}
+.photo-cap p{margin-top:10px;font-size:.92rem;color:var(--body);}
+.photo-wrap{margin:8px 0 56px;}
 
 /* ---------- THE TABLE ---------- */
-.tbl-note{font-size:.84rem;color:var(--muted);margin-bottom:26px;max-width:72ch;}
-.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;border:1px solid var(--hairline);background:var(--white);}
-table{width:100%;border-collapse:collapse;min-width:780px;}
+.tbl-note{font-size:.8rem;color:var(--muted);margin-bottom:20px;max-width:70ch;}
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--radius-table);border:1px solid var(--hairline);background:var(--surface);box-shadow:var(--shadow-rest);}
+table{width:100%;border-collapse:collapse;min-width:720px;}
 th{
-  text-align:right;padding:15px 16px;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--teal);border-bottom:2px solid var(--teal);white-space:nowrap;background:var(--warm);
+  text-align:right;padding:16px 18px;font-family:var(--font-body);font-size:.68rem;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--hairline);white-space:nowrap;
 }
 th:first-child{text-align:left;}
-th.resale{color:var(--green);}
+th.resale{color:var(--coral);}
 td{
-  text-align:right;padding:15px 16px;border-bottom:1px solid var(--hairline);
-  font-variant-numeric:tabular-nums;color:#263335;font-size:.96rem;white-space:nowrap;
+  text-align:right;padding:15px 18px;border-bottom:1px solid var(--hairline-soft);
+  font-family:var(--font-mono);font-size:.82rem;color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums;
 }
-td:first-child{text-align:left;font-weight:700;color:var(--teal);font-family:var(--font-head);font-size:1.05rem;}
-td.pos{color:var(--green);font-weight:700;}
-td.resale{color:var(--teal-deep);}
-td.resale.highlight{color:var(--green);font-weight:700;}
-td.resale.highlight .tag{display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--green);border-radius:5px;padding:2px 7px;margin-bottom:3px;}
-tr.year-five td{background:rgba(13,143,100,0.06);}
-tr.total-row td{font-weight:700;color:var(--teal-deep);border-top:2px solid var(--teal);border-bottom:none;}
-tr.total-row td:first-child{color:var(--teal);}
-.tbl-footnote{font-size:.8rem;color:var(--muted);margin-top:18px;max-width:78ch;}
-.tbl-footnote em{color:var(--teal-deep);font-style:normal;font-weight:700;}
+tbody tr:nth-child(even){background:rgba(0,0,0,0.012);}
+td:first-child{text-align:left;font-family:var(--font-body);font-weight:700;color:var(--ink);font-size:.92rem;}
+td.pos{color:var(--coral);font-weight:600;}
+td.resale{color:var(--body);}
+td.resale.highlight{color:var(--coral);font-weight:600;}
+td.resale.highlight .tag{display:inline-flex;font-family:var(--font-body);font-size:.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff;background:var(--coral);border-radius:100px;padding:3px 10px;margin-bottom:4px;}
+tr.year-five td{background:var(--coral-tint);}
+tr.year-five td:first-child{color:var(--coral);}
+tr.total-row td{font-weight:600;color:var(--ink);border-top:2px solid var(--hairline);border-bottom:none;}
+tr.total-row td:first-child{color:var(--coral);}
+.tbl-footnote{font-size:.76rem;color:var(--muted);margin-top:16px;max-width:80ch;line-height:1.6;}
 
-/* Resale insight band */
+/* ---------- RESALE STRIP ---------- */
 .resale-strip{
-  margin-top:32px;display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:26px;align-items:center;
-  padding:34px 32px;border-radius:12px;border:1px solid var(--hairline);background:var(--warm);
+  margin-top:36px;display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:24px;align-items:center;
+  padding:36px 32px;border-radius:var(--radius-card);border:1px solid var(--coral-border);background:var(--coral-tint);
+  box-shadow:var(--shadow-rest);
 }
-.resale-cell .rl{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
-.resale-cell .rv{font-family:var(--font-head);font-size:clamp(1.7rem,3vw,2.5rem);color:var(--teal);margin-top:8px;line-height:1;}
-.resale-cell.green .rv{color:var(--green);}
-.resale-cell .rs{font-size:.86rem;color:var(--muted);margin-top:8px;}
-.resale-arrow{color:var(--green);font-size:1.4rem;opacity:.85;}
+@media(max-width:700px){.resale-strip{grid-template-columns:1fr;gap:18px;text-align:center;}.resale-arrow{transform:rotate(90deg);}}
+.resale-cell .rl{font-family:var(--font-body);font-size:.68rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+.resale-cell .rv{font-family:var(--font-body);font-size:clamp(1.9rem,3.4vw,2.6rem);font-weight:900;line-height:1;color:var(--ink);margin-top:10px;}
+.resale-cell.green .rv{color:var(--coral);}
+.resale-cell .rs{font-size:.82rem;color:var(--body);margin-top:8px;}
+.resale-arrow{color:var(--coral);font-size:1.5rem;font-weight:700;}
 
-/* Summary cards */
-.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;}
-.summary .card{background:var(--white);border:1px solid var(--hairline);border-radius:12px;padding:32px 26px;text-align:center;}
-.summary .card .lbl{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
-.summary .card .val{font-family:var(--font-head);font-size:2.5rem;color:var(--teal);margin-top:12px;line-height:1;text-wrap:nowrap;}
-.summary .card .val.green{color:var(--green);}
-.summary .card .sub{font-size:.85rem;color:var(--muted);margin-top:12px;}
-.big-result{
-  margin-top:40px;text-align:center;padding:48px 34px;border-radius:12px;
-  background:var(--teal);
-  box-shadow:0 18px 44px rgba(23,68,69,0.28);
+/* ---------- SUMMARY ---------- */
+.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+@media(max-width:700px){.summary{grid-template-columns:1fr;}}
+.summary .card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:30px 24px;text-align:center;box-shadow:var(--shadow-rest);}
+.summary .card .lbl{font-family:var(--font-body);font-size:.68rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+.summary .card .val{font-family:var(--font-body);font-size:2.2rem;font-weight:900;color:var(--ink);margin-top:12px;line-height:1;white-space:nowrap;}
+.summary .card .val.pos{color:var(--coral);}
+.summary .card .sub{font-size:.8rem;color:var(--muted);margin-top:12px;}
+
+/* ---------- VERDICT ---------- */
+.verdict{
+  margin-top:40px;text-align:center;padding:52px 34px;border-radius:var(--radius-card);
+  background:var(--coral-tint);border:1px solid var(--coral-border);
+  background-image:radial-gradient(60% 80% at 50% 0%, rgba(204,120,92,0.10), rgba(204,120,92,0) 70%);
+  box-shadow:var(--shadow-rest);
 }
-.big-result .rl{font-size:.74rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.8);}
-.big-result .rv{font-family:var(--font-head);font-size:clamp(2.8rem,5.5vw,4.3rem);color:#fff;margin-top:12px;line-height:1;}
-.big-result .rv-sub{font-family:var(--font-body);font-size:1.06rem;color:var(--green-lift);margin-top:14px;font-weight:700;}
-.big-result .rw{color:rgba(255,255,255,0.9);max-width:58ch;margin:16px auto 0;font-size:1rem;}
-
-/* ---------- KEY PILLARS (light) ---------- */
-.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.pillar{background:var(--white);border:1px solid var(--hairline);border-radius:12px;padding:34px 28px;transition:transform .3s,border-color .3s;}
-.pillar:hover{transform:translateY(-4px);border-color:var(--teal);}
-.pillar .tag{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--green);}
-.pillar h3{font-family:var(--font-head);font-weight:400;color:var(--teal);font-size:1.45rem;margin-top:12px;line-height:1.25;}
-.pillar p{color:var(--muted);font-size:.96rem;margin-top:12px;line-height:1.64;}
+.verdict .rl{font-family:var(--font-body);font-size:.68rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--muted);}
+.verdict .rv{font-family:var(--font-body);font-size:clamp(3rem,6vw,4.6rem);font-weight:900;line-height:1;color:var(--ink);margin-top:14px;font-variant-numeric:tabular-nums;}
+.verdict .rv-sub{font-family:var(--font-body);font-size:1.05rem;font-weight:700;color:var(--coral);margin-top:14px;}
+.verdict .rw{max-width:56ch;margin:16px auto 0;font-size:.92rem;color:var(--body);}
 
 /* ---------- ASSUMPTIONS ---------- */
-.assumes{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.assumes{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+@media(max-width:700px){.assumes{grid-template-columns:1fr;gap:20px;}}
 .assume-row{display:flex;gap:18px;align-items:flex-start;margin-bottom:26px;}
-.assume-row .dot{width:28px;height:28px;flex:0 0 28px;border-radius:50%;border:2px solid var(--green);position:relative;margin-top:4px;}
-.assume-row .dot::after{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--green);}
-.assumes h3{font-size:1.1rem;font-weight:700;color:var(--teal-deep);margin-bottom:4px;}
-.assumes p{font-size:.97rem;color:var(--muted);line-height:1.62;}
-.assume-note{margin-top:36px;padding:20px 24px;background:var(--warm);border-radius:12px;font-size:.9rem;color:var(--muted);line-height:1.6;}
+.assume-row .mark{width:26px;height:26px;flex:0 0 26px;border-radius:50%;background:var(--coral);position:relative;margin-top:4px;}
+.assume-row .mark::after{content:"";position:absolute;inset:7px;border-radius:50%;background:#fff;}
+.assumes h4{font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.assumes p{font-size:.9rem;color:var(--body);line-height:1.6;}
+.assume-note{margin-top:30px;padding:20px 24px;background:var(--surface-alt);border-radius:var(--radius-card);font-size:.84rem;color:var(--body);line-height:1.65;}
 
-/* ---------- CLOSE (dark-section family) ---------- */
-.close{background-color:var(--teal);background-image:var(--dark-grad);text-align:center;}
-.close h2{font-family:var(--font-head);font-weight:400;color:#fff;font-size:clamp(1.9rem,3.8vw,3rem);max-width:24ch;margin:0 auto;line-height:1.16;}
-.close p{color:var(--mist);max-width:54ch;margin:24px auto 38px;font-size:1.08rem;}
-.close .btn{font-size:1.05rem;padding:19px 44px;}
-
-footer{padding:42px 0;text-align:center;color:var(--mist);font-size:.82rem;border-top:1px solid rgba(255,255,255,0.08);background:var(--ink);}
-footer a{color:var(--green-lift);}
-footer .wrap{max-width:var(--maxw);}
+/* ---------- CLOSE + FOOTER ---------- */
+.close-section{padding:96px 0 80px;text-align:center;}
+.close-section h2{font-family:var(--font-body);font-size:clamp(1.6rem,3.6vw,2.4rem);font-weight:800;line-height:1.2;color:var(--ink);max-width:22ch;margin:0 auto;}
+.close-section p{color:var(--body);max-width:50ch;margin:20px auto 34px;font-size:.98rem;}
+footer{padding:40px 0;text-align:center;border-top:1px solid var(--hairline);color:var(--muted);font-size:.78rem;}
+footer a{color:var(--muted);}
+footer a:hover{color:var(--coral);}
+footer .wrap{max-width:960px;}
+footer p+p{margin-top:8px;}
 
 /* ---------- RESPONSIVE ---------- */
-@media(max-width:920px){
-  .props,.pillars{grid-template-columns:1fr;}
-  .summary{grid-template-columns:1fr;}
-  .assumes{grid-template-columns:1fr;gap:40px;}
-  .resale-strip{grid-template-columns:1fr;gap:18px;text-align:center;}
-  .resale-arrow{transform:rotate(90deg);}
-  .section{padding:84px 0;}
-  .hero-stats{grid-template-columns:1fr 1fr;gap:20px;}
-  .hero{padding-top:120px;}
-}
-@media(max-width:600px){
-  .hero-stats{grid-template-columns:1fr;gap:16px;}
-  .hero-photo{padding:22px 16px;}
+@media(max-width:700px){
+  .hero{padding:110px 0 56px;}
+  .hero-stats{grid-template-columns:1fr;gap:20px;}
+  .hero-photo{padding:22px 14px;}
   .brand .meta{display:none;}
 }
 </style>
@@ -244,138 +239,97 @@ footer .wrap{max-width:var(--maxw);}
 
 <nav id="nav">
   <div class="wrap">
-    <div class="brand">BYD <span class="accent">SEAL</span> <span class="meta">&middot; business case</span></div>
+    <div class="brand">BYD <span class="accent">SEAL</span><span class="divider">·</span><span class="meta">business case</span></div>
     <a class="cta" href="#table">See the numbers</a>
   </div>
 </nav>
 
-<!-- ================= HERO (light) ================= -->
+<!-- ================= HERO ================= -->
 <section class="hero" id="hero">
-  <div class="hero-bg" aria-hidden="true">
-    <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <radialGradient id="g1" cx="26%" cy="22%" r="46%">
-          <stop offset="0%" stop-color="#174445" stop-opacity="0.12"/>
-          <stop offset="100%" stop-color="#174445" stop-opacity="0"/>
-        </radialGradient>
-      </defs>
-      <rect width="1200" height="600" fill="url(#g1)"/>
-      <g stroke="rgba(23,68,69,0.14)" stroke-width="0.9">
-        <line x1="0" y1="130" x2="1200" y2="130"/>
-        <line x1="0" y1="280" x2="1200" y2="280"/>
-        <line x1="0" y1="430" x2="1200" y2="430"/>
-        <line x1="320" y1="0" x2="320" y2="600"/>
-        <line x1="660" y1="0" x2="660" y2="600"/>
-        <line x1="1000" y1="0" x2="1000" y2="600"/>
-      </g>
-      <g fill="rgba(23,68,69,0.24)">
-        <circle cx="210" cy="130" r="3.4"/><circle cx="470" cy="280" r="4.4"/>
-        <circle cx="720" cy="130" r="2.9"/><circle cx="960" cy="430" r="4.4"/>
-        <circle cx="150" cy="430" r="2.7"/><circle cx="560" cy="430" r="3.9"/>
-        <circle cx="870" cy="280" r="2.7"/><circle cx="380" cy="500" r="4.8"/>
-        <circle cx="1060" cy="130" r="2.9"/><circle cx="660" cy="430" r="3.5"/>
-      </g>
-      <g fill="#0d8f64" opacity="0.7">
-        <circle cx="470" cy="280" r="4.4"><animate attributeName="opacity" values="0.45;1;0.45" dur="4.2s" repeatCount="indefinite"/></circle>
-        <circle cx="380" cy="500" r="4.8"><animate attributeName="opacity" values="0.45;1;0.45" dur="5.2s" repeatCount="indefinite"/></circle>
-      </g>
-      <g stroke="rgba(23,68,69,0.2)" stroke-width="0.9" fill="none">
-        <path d="M210,130 Q340,190 470,280"/>
-        <path d="M470,280 Q590,340 720,130"/>
-        <path d="M720,130 Q840,280 960,430"/>
-        <path d="M150,430 Q260,470 380,500"/>
-        <path d="M380,500 Q470,470 560,430"/>
-        <path d="M560,430 Q610,430 660,430"/>
-        <path d="M870,280 Q915,355 960,430"/>
-      </g>
-    </svg>
-  </div>
-  <div class="hero-content wrap">
-    <div class="eyebrow reveal">The BYD SEAL &middot; purchased through the SnowArk Unit Trust</div>
-    <h1 class="reveal" style="transition-delay:.1s">The car pays you back <span class="accent">every year.</span></h1>
-    <p class="hero-sub reveal" style="transition-delay:.2s">Buy the SEAL Premium through the business and the government refunds part of the price, untaxes the running costs, and writes the rest off. The result: a $58,400 car that costs you about <strong>$32,400</strong> across its life.</p>
-    <div class="hero-thin reveal" style="transition-delay:.28s">New 2026 SEAL Premium, Atlantis Grey, in stock. Drive-away $58,400. Bundled into one automatic business claim.</div>
-    <div class="hero-actions reveal" style="transition-delay:.34s">
+  <div class="wrap">
+    <div class="kicker reveal">Purchased through the SnowArk Unit Trust</div>
+    <h1 class="reveal" style="transition-delay:.08s">The car pays you back <span class="accent">every year.</span></h1>
+    <p class="hero-sub reveal" style="transition-delay:.16s">Buy the SEAL Premium through the business and the government refunds part of the price, untaxes the running costs, and writes the rest off. A $58,400 car that costs you about <strong>$32,400</strong> across its life.</p>
+    <div class="hero-thin reveal" style="transition-delay:.22s">New 2026 SEAL Premium, Atlantis Grey, in stock · Drive-away $58,400 · Bundled into one automatic business claim.</div>
+    <div class="hero-actions reveal" style="transition-delay:.28s">
       <a class="btn btn-primary" href="#table">Show me the tax table</a>
       <a class="btn btn-ghost" href="#why">Why the business buys it</a>
     </div>
-    <div class="hero-photo reveal" style="transition-delay:.4s">
-      <img src="images/hero.png" alt="BYD SEAL electric sedan, studio cutout on warm-gray panel">
+    <div class="hero-photo reveal" style="transition-delay:.34s">
+      <img src="images/hero.png" alt="BYD SEAL electric sedan, studio cutout on a soft grey panel">
     </div>
-    <div class="hero-stats reveal" style="transition-delay:.46s">
-      <div class="hstat"><div class="n">$58,400</div><div class="l">Drive-away price, GST-included</div></div>
-      <div class="hstat"><div class="n">$5,309<sup>*</sup></div><div class="l">GST refunded in the first BAS</div></div>
-      <div class="hstat"><div class="n">100%</div><div class="l">FBT exempt, EV running costs</div></div>
+    <div class="hero-stats reveal" style="transition-delay:.4s">
+      <div class="hstat"><div class="n"><span class="cur">$</span>58,400</div><div class="l">Drive-away price, GST-included</div></div>
+      <div class="hstat"><div class="n"><span class="cur">$</span>5,309<sup>*</sup></div><div class="l">GST refunded in the first BAS</div></div>
+      <div class="hstat"><div class="n">100<sup>%</sup></div><div class="l">FBT exempt, EV running costs</div></div>
     </div>
   </div>
 </section>
 
-<!-- ================= PROPOSITION (light) ================= -->
+<!-- ================= PILLARS / WHY ================= -->
 <section class="section" id="why">
   <div class="wrap">
-    <div class="sec-intro reveal">
-      <div class="eyebrow">Why this is a business asset, not a personal splurge</div>
-      <h2 class="sec-h">The tax law hands you three separate wins on an EV bought through the business.</h2>
-      <p class="sec-lead">A battery electric vehicle is the only asset category currently treated this generously. Every pillar below lands because the SEAL is an eligible EV bought under the SnowArk Unit Trust's GST registration.</p>
+    <div class="sec-head reveal">
+      <div class="kicker">Why this is a business asset</div>
+      <h2 class="sec-title">The tax law hands you three separate wins on an EV bought through the business.</h2>
+      <p class="sec-lead">A battery electric vehicle is the only asset category currently treated this generously. Every win below lands because the SEAL is an eligible EV bought under the SnowArk Unit Trust's GST registration.</p>
     </div>
-    <div class="props">
-      <div class="prop reveal">
+    <div class="pillars">
+      <div class="pillar reveal">
         <div class="num">$5,309</div>
         <h3>GST refunded, up front</h3>
-        <p>The trust claims the full 1/11th input credit in its first BAS. That is cash back in the trust's pocket, because the SEAL sits under the car limit.</p>
+        <p>The trust claims the full 1/11th input credit in its first BAS. Cash back in the trust's pocket, because the SEAL sits under the car limit.</p>
       </div>
-      <div class="prop reveal" style="transition-delay:.08s">
+      <div class="pillar reveal" style="transition-delay:.08s">
         <div class="num">0<small>%</small></div>
         <h3>No fringe benefits tax</h3>
-        <p>Private use of an eligible EV is 100% FBT exempt. The running and charging costs ride along untaxed too. Bigger than it sounds, protected by law.</p>
+        <p>Private use of an eligible EV is 100% FBT exempt, including the electricity to charge it. Protected by law.</p>
       </div>
-      <div class="prop reveal" style="transition-delay:.16s">
+      <div class="pillar reveal" style="transition-delay:.16s">
         <div class="num">$20,706</div>
         <h3>Written off over 5 years</h3>
-        <p>The car depreciates through the small business pool, 15% then 30% a year, turning the purchase price into annual tax deductions worth real money.</p>
+        <p>The car depreciates through the small business pool, turning the purchase price into annual tax deductions worth real money.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= SHOWCASE 1 (light) ================= -->
-<section class="section warm">
+<!-- ================= SHOWCASE 1 ================= -->
+<section class="section alt">
   <div class="wrap">
-    <div class="showcase-wrap reveal">
-      <div class="showcase-frame">
-        <img src="images/showcase-1.jpg" alt="BYD SEAL carving a mountain road">
-      </div>
-      <div class="showcase-cap">
-        <div class="eyebrow">230 kW &middot; 520 km WLTP range &middot; Blade Battery</div>
-        <h2>You drive a performance EV. The business claims it.</h2>
-        <p>The SEAL Premium is a proper machine in its own right. The tax treatment simply makes the decision feel almost too easy.</p>
+    <div class="photo-wrap reveal">
+      <div class="photo-frame"><img src="images/showcase-1.jpg" alt="BYD SEAL carving a mountain road"></div>
+      <div class="photo-cap">
+        <div class="eyebrow">230 kW · 520 km WLTP · Blade Battery</div>
+        <h3>You drive a performance EV. The business claims it.</h3>
+        <p>The SEAL Premium is a proper machine in its own right. The tax treatment makes the decision feel easy.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= THE TABLE (light) ================= -->
+<!-- ================= THE TABLE ================= -->
 <section class="section" id="table">
   <div class="wrap">
-    <div class="sec-intro reveal">
-      <div class="eyebrow">The proof, below the fold</div>
-      <h2 class="sec-h" style="max-width:30ch;">The tax table. Watch the purchase price come down year by year.</h2>
-      <p class="sec-lead">Because you claim the GST refund, depreciation runs on the GST-exclusive cost of $53,091. The deduction at your marginal rate (37% plus Medicare) turns each year's write-down into a cash-equivalent saving. Add the GST refund back and here is the full life of the car.</p>
+    <div class="sec-head reveal">
+      <div class="kicker">The proof</div>
+      <h2 class="sec-title">The tax table. Watch the purchase price come down year by year.</h2>
+      <p class="sec-lead">Depreciation runs on the GST-exclusive cost of $53,091. Each year's write-down becomes a cash-equivalent saving at your 39% marginal rate. Add the GST refund back, and here is the full life of the car.</p>
     </div>
 
-    <p class="tbl-note reveal">Marginal rate 39% &middot; assumes 100% business use &middot; small business pool rules (instant write-off excluded, asset over $20,000).</p>
+    <p class="tbl-note reveal">Marginal rate 39% &middot; assumes 100% business use &middot; small business pool (asset over $20,000).</p>
 
     <div class="tbl-scroll reveal">
       <table>
         <thead>
           <tr>
             <th>Year</th>
-            <th>Opening value</th>
+            <th>Opening</th>
             <th>Depreciation</th>
             <th>Rate</th>
             <th>Tax saving @39%</th>
-            <th>Closing value</th>
-            <th class="resale">Est. resale value</th>
+            <th>Closing</th>
+            <th class="resale">Est. resale</th>
           </tr>
         </thead>
         <tbody>
@@ -384,25 +338,25 @@ footer .wrap{max-width:var(--maxw);}
           <tr><td>2029</td><td>$31,589</td><td>$9,477</td><td>30%</td><td class="pos">$3,696</td><td>$22,112</td><td class="resale">~$32,100</td></tr>
           <tr><td>2030</td><td>$22,112</td><td>$6,634</td><td>30%</td><td class="pos">$2,587</td><td>$15,479</td><td class="resale">~$28,600</td></tr>
           <tr class="year-five"><td>2031</td><td>$15,479</td><td>$15,479</td><td>pool closes</td><td class="pos">$6,037</td><td>$0</td><td class="resale highlight"><span class="tag">5-yr mark</span><br>~$26,300</td></tr>
-          <tr class="total-row"><td>Total</td><td></td><td>$53,091</td><td></td><td>$20,706</td><td></td><td class="resale"></td></tr>
+          <tr class="total-row"><td>Total</td><td></td><td>$53,091</td><td></td><td>$20,706</td><td></td><td></td></tr>
         </tbody>
       </table>
     </div>
-    <p class="tbl-footnote reveal">*In the final year the remaining pool balance falls under the $20,000 threshold, so the whole balance is written off and the pool closes to zero. That is the <em>book</em> value. "Est. resale value" is the car's <em>market</em> worth in that year, a separate figure, based on AADA/AutoGrab BEV retention (55.5% at three years) and the SEAL's stronger-than-average retention. Figures are indicative, not guaranteed.</p>
+    <p class="tbl-footnote reveal">*In the final year the pool balance falls under the $20,000 threshold and closes to zero. That is the <em>book</em> value. "Est. resale" is the car's <em>market</em> worth in that year, a separate figure, based on AADA/AutoGrab BEV retention and the SEAL's stronger-than-average retention. Indicative, not guaranteed.</p>
 
     <div class="resale-strip reveal">
       <div class="resale-cell">
         <div class="rl">Books at year five</div>
         <div class="rv">$0</div>
-        <div class="rs">Written down to zero on the trust's balance sheet</div>
+        <div class="rs">Written off on the trust's balance sheet</div>
       </div>
-      <div class="resale-arrow">&#8594;</div>
+      <div class="resale-arrow">→</div>
       <div class="resale-cell green">
         <div class="rl">The market still pays</div>
         <div class="rv">~$26,300</div>
         <div class="rs">Estimated resale at the 5-year mark</div>
       </div>
-      <div class="resale-arrow">&#8594;</div>
+      <div class="resale-arrow">→</div>
       <div class="resale-cell green">
         <div class="rl">True 5-year cost if you sell</div>
         <div class="rv">~$6,100</div>
@@ -418,127 +372,100 @@ footer .wrap{max-width:var(--maxw);}
       </div>
       <div class="card reveal" style="transition-delay:.08s">
         <div class="lbl">GST refunded</div>
-        <div class="val green">-$5,309</div>
+        <div class="val pos">-$5,309</div>
         <div class="sub">First BAS, cash back</div>
       </div>
       <div class="card reveal" style="transition-delay:.16s">
         <div class="lbl">Tax saved over 5 years</div>
-        <div class="val green">-$20,706</div>
-        <div class="sub">Depreciation &times; 39%</div>
+        <div class="val pos">-$20,706</div>
+        <div class="sub">Depreciation × 39%</div>
       </div>
     </div>
 
-    <div class="big-result reveal">
+    <div class="verdict reveal">
       <div class="rl">What the SEAL really costs you</div>
       <div class="rv">~$32,400</div>
-      <div class="rv-sub">while you hold it &middot; or ~$6,100 if you sell it at year five</div>
-      <div class="rw">One purchase, two automatic refunds, zero fringe benefits tax on private use, and a car that still holds real value when the books say zero. The SEAL lands at less than 56 cents on the dollar, and you keep driving it.</div>
+      <div class="rv-sub">while you hold it · or ~$6,100 if you sell it at year five</div>
+      <div class="rw">One purchase, two automatic refunds, zero FBT on private use, and a car that still holds real value when the books say zero.</div>
     </div>
   </div>
 </section>
 
-<!-- ================= SHOWCASE 2 (light) ================= -->
-<section class="section warm">
+<!-- ================= SHOWCASE 2 ================= -->
+<section class="section alt">
   <div class="wrap">
-    <div class="showcase-wrap reveal">
-      <div class="showcase-frame">
-        <img src="images/showcase-2.jpg" alt="BYD SEAL premium interior with ambient lighting">
-      </div>
-      <div class="showcase-cap">
+    <div class="photo-wrap reveal">
+      <div class="photo-frame"><img src="images/showcase-2.jpg" alt="BYD SEAL premium interior with ambient lighting"></div>
+      <div class="photo-cap">
         <div class="eyebrow">Every-day comfort</div>
-        <h2>The business case is the excuse. You get the SEAL.</h2>
-        <p>Premium cabin, 12-speaker Dynaudio, 2,900 mm wheelbase. A car you look forward to driving to and from client work.</p>
+        <h3>The business case is the excuse. You get the SEAL.</h3>
+        <p>Premium cabin, 12-speaker Dynaudio, 2,900 mm wheelbase. A car you look forward to driving.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= HOW IT WORKS (warm-gray) ================= -->
-<section class="section warm">
-  <div class="wrap">
-    <div class="sec-intro reveal">
-      <div class="eyebrow">What has to be true</div>
-      <h2 class="sec-h">Three assumptions keep every number clean.</h2>
-    </div>
-    <div class="pillars">
-      <div class="pillar reveal">
-        <div class="tag">1 &middot; Business use</div>
-        <h3>100% business use</h3>
-        <p>A 12-week logbook substantiates the percentage. The figures shown assume full business use; if it is 70%, every saving scales to 70%.</p>
-      </div>
-      <div class="pillar reveal" style="transition-delay:.08s">
-        <div class="tag">2 &middot; Ownership</div>
-        <h3>Bought by the trust</h3>
-        <p>SnowArk Unit Trust, the GST-registered trading entity, owns it. Routing the purchase through the company would lose the GST credit entirely.</p>
-      </div>
-      <div class="pillar reveal" style="transition-delay:.16s">
-        <div class="tag">3 &middot; Rate basis</div>
-        <h3>Deduction at your rate</h3>
-        <p>Savings priced at your 37% bracket plus 2% Medicare. If your income pushes you to the 47% band, the saving grows to roughly $24,950.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= ASSUMPTIONS (light) ================= -->
+<!-- ================= ASSUMPTIONS ================= -->
 <section class="section">
   <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Clean claims</div>
+      <h2 class="sec-title">What is guaranteed vs. what gets confirmed.</h2>
+    </div>
     <div class="assumes">
       <div class="reveal">
-        <div class="eyebrow">Clean claims, transparent basis</div>
-        <h2 class="sec-h">What is guaranteed vs. what gets confirmed.</h2>
+        <div class="assume-row">
+          <div class="mark"></div>
+          <div>
+            <h4>FBT exemption: to its cap</h4>
+            <p>Full exemption for the SEAL (under $75,000) running to 31 March 2029, then 25% subject to grandfathering; ATO review due mid-2027.</p>
+          </div>
+        </div>
+        <div class="assume-row">
+          <div class="mark"></div>
+          <div>
+            <h4>GST credit: confirmed</h4>
+            <p>$5,309 refunded on the trust's first BAS, price under the car limit.</p>
+          </div>
+        </div>
+        <div class="assume-row">
+          <div class="mark"></div>
+          <div>
+            <h4>Depreciation: automatic</h4>
+            <p>Small business pool, 15% then 30%, no election needed.</p>
+          </div>
+        </div>
+        <div class="assume-row">
+          <div class="mark"></div>
+          <div>
+            <h4>One confirmation to book</h4>
+            <p>James West signs off your status with the trust so the claim is clean under FBT and PSI.</p>
+          </div>
+        </div>
       </div>
       <div class="reveal">
-        <div class="assume-row">
-          <div class="dot"></div>
-          <div>
-            <h3>FBT exemption: guaranteed</h3>
-            <p>Protected by law for eligible EVs acquired before the 1 April 2027 phase-down. Buying now locks the full exemption in.</p>
-          </div>
-        </div>
-        <div class="assume-row">
-          <div class="dot"></div>
-          <div>
-            <h3>GST credit: confirmed</h3>
-            <p>$5,309 refunded on the trust's first BAS after purchase, price under the car limit.</p>
-          </div>
-        </div>
-        <div class="assume-row">
-          <div class="dot"></div>
-          <div>
-            <h3>Depreciation: automatic</h3>
-            <p>Small business pool, 15% then 30%, no election needed beyond the standard return.</p>
-          </div>
-        </div>
-        <div class="assume-row">
-          <div class="dot"></div>
-          <div>
-            <h3>One confirmation to book</h3>
-            <p>James West signs off your director/employee status with the trust so the claim is clean under FBT and PSI.</p>
-          </div>
-        </div>
         <div class="assume-note">
-          All figures indicative and subject to James West's confirmation of your employment status and the final business-use logbook. Rates are the 2026/27 statutory figures published by the ATO. Resale values are independent market estimates and are not part of the tax position.
+          All figures indicative and subject to James West's confirmation and the final business-use logbook. Rates are the 2026/27 statutory figures. Income treated as PSI consulting profit (no salary). Resale values are independent market estimates, not part of the tax position.
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= CLOSE (dark) ================= -->
-<section class="section close">
+<!-- ================= CLOSE ================= -->
+<section class="close-section" id="book">
   <div class="wrap reveal">
-    <div class="eyebrow" style="color:var(--green-lift);">Decision time</div>
+    <div class="kicker">Decision time</div>
     <h2>Buy it through the business. Keep the tax win. Drive the SEAL.</h2>
-    <p>One phone call to James confirms the last detail. From there the SEAL is a work expense that pays you back every year.</p>
+    <p>One call to James confirms the last detail. From there the SEAL is a work expense that pays you back every year.</p>
     <a class="btn btn-primary" href="https://bydautomotive.com.au/seal">View the SEAL on BYD's site</a>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p>Prepared for SnowArk internal decision &middot; indicative business case, not tax advice &middot; confirm final treatment with your tax agent</p>
-    <p style="margin-top:8px;">Media sourced from <a href="https://bydautomotive.com.au/seal" target="_blank" rel="noopener">bydautomotive.com.au</a></p>
+    <p>Prepared for SnowArk internal decision · indicative business case, not tax advice · confirm final treatment with your tax agent</p>
+    <p>Media sourced from <a href="https://bydautomotive.com.au/seal" target="_blank" rel="noopener">bydautomotive.com.au</a></p>
   </div>
 </footer>
 
