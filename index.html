@@ -6,228 +6,262 @@
 <title>The BYD SEAL Case | Buy it through the business</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cambo&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cambo&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
+/* ============================================================
+   SNOWARK DESIGN SYSTEM  (dark marketing build)
+   Tokens, type, colour. One accent per section: green-lift.
+   ============================================================ */
 :root{
-  --ink:#0a1112;
-  --ink2:#0e1a1c;
-  --ink3:#132326;
-  --teal:#2a7f80;
-  --teal-lift:#4cc296;
-  --green:#0d8f64;
-  --mist:#e9e7e3;
+  --ink:#0b2021;
+  --ink-2:#0e2628;
+  --heading-ink:#0e2929;
   --white:#ffffff;
-  --gold:#d9b45a;
-  --muted:rgba(233,231,227,0.62);
+  --black:#000000;
+  --warm:#e9e7e3;
+
+  --teal-lift:#2a7f80;
+  --teal-soft:#7fb8b9;
+  --green-lift:#4cc296;
+  --green:#0d8f64;
+  --mist:rgba(233,231,227,0.78);
+  --dim:rgba(233,231,227,0.55);
+  --hairline:rgba(255,255,255,0.09);
+
   --maxw:1120px;
-  --font-head:'Cambo', Georgia, serif;
+  --font-head:'Cambo', Georgia, 'Times New Roman', serif;
   --font-body:'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --dark-grad:linear-gradient(180deg,#0d2d2e 0%,#123a3b 50%,#0d2d2e 100%);
 }
+
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
+:root{font-synthesis:none;font-size-adjust:from-font;}
+h1,h2,h3{text-wrap:balance;}
+p{text-wrap:pretty;}
+
 body{
   font-family:var(--font-body);
   background:var(--ink);
-  color:var(--mist);
-  font-size:1.05rem;
+  color:var(--ink);
+  font-size:1rem;
   line-height:1.7;
   -webkit-font-smoothing:antialiased;
-  font-synthesis:none;
 }
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
 img{max-width:100%;display:block;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+a{color:inherit;}
 
-/* Reveal on scroll */
-.reveal{opacity:0;transform:translateY(36px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1);}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);}
 .reveal.in{opacity:1;transform:none;}
 @media (prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none;}
   html{scroll-behavior:auto;}
+  .hero-car,.glow{animation:none !important;}
+}
+
+.eyebrow{
+  font-family:var(--font-body);
+  font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--green-lift);margin-bottom:24px;
 }
 
 /* ---------- NAV ---------- */
 nav{
-  position:fixed;top:0;left:0;right:0;z-index:50;
-  padding:18px 0;transition:background .4s, padding .4s;backdrop-filter:blur(8px);
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  padding:20px 0;transition:background .4s,padding .4s;backdrop-filter:blur(10px);
 }
-nav.scrolled{background:rgba(10,17,18,0.82);padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
+nav.scrolled{background:rgba(11,32,33,0.86);padding:14px 0;border-bottom:1px solid var(--hairline);}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;}
-.brand{font-family:var(--font-head);color:#fff;font-size:1.05rem;letter-spacing:.02em;}
-.brand span{color:var(--teal-lift);}
+.brand{font-family:var(--font-head);color:#fff;font-size:1.08rem;letter-spacing:.02em;}
+.brand .accent{color:var(--green-lift);}
+.brand .meta{color:var(--dim);font-family:var(--font-body);font-weight:400;font-size:.82rem;letter-spacing:.02em;}
 nav a.cta{
-  color:#fff;text-decoration:none;font-weight:700;font-size:.86rem;
-  padding:10px 22px;border:1px solid rgba(255,255,255,0.25);border-radius:10px;
-  transition:all .3s;letter-spacing:.02em;
+  color:#fff;text-decoration:none;font-weight:700;font-size:.84rem;
+  padding:10px 22px;border:1px solid rgba(255,255,255,0.26);border-radius:10px;
+  transition:all .3s;letter-spacing:.02em;white-space:nowrap;
 }
-nav a.cta:hover{border-color:var(--teal-lift);color:var(--teal-lift);}
+nav a.cta:hover{border-color:var(--green-lift);color:var(--green-lift);}
 
 /* ---------- HERO ---------- */
 .hero{
   position:relative;min-height:100vh;display:flex;align-items:flex-start;overflow:hidden;
+  background:linear-gradient(180deg,#0a1c1d 0%,#0b2021 45%,#0e2628 100%);
 }
-.hero-bg{
-  position:absolute;inset:0;z-index:0;
-  background:#070b0c;
-}
+.hero-bg{position:absolute;inset:0;z-index:0;opacity:.5;}
+.hero-bg svg{width:100%;height:100%;}
 .hero-car{
   position:absolute;z-index:1;
   left:50%;bottom:-6%;transform:translateX(-50%);
-  width:min(1560px,135vw);mix-blend-mode:screen;opacity:.98;
+  width:min(1520px,134vw);mix-blend-mode:screen;opacity:.96;
   animation:carFloat 12s ease-in-out infinite;
+  filter:drop-shadow(0 40px 60px rgba(0,0,0,0.55));
 }
-@keyframes carFloat{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(-12px);}}
+@keyframes carFloat{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(-14px);}}
 .hero-vignette{
   position:absolute;inset:0;z-index:2;
-  background:linear-gradient(180deg,#070b0c 0%,rgba(7,11,12,0.15) 26%,rgba(7,11,12,0) 46%,rgba(7,11,12,0.55) 78%,#070b0c 100%);
+  background:linear-gradient(180deg,#0a1c1d 0%,rgba(10,28,29,0.14) 28%,rgba(10,28,29,0) 48%,rgba(10,28,29,0.5) 76%,#0a1c1d 100%);
 }
-.hero-content{
-  position:relative;z-index:3;width:100%;padding:140px 0 0;
-}
-.eyebrow{
-  font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--teal-lift);margin-bottom:22px;
-}
+.hero-content{position:relative;z-index:3;width:100%;padding:150px 0 0;}
 .hero h1{
   font-family:var(--font-head);font-weight:400;color:#fff;
-  font-size:clamp(2.6rem,6vw,4.9rem);line-height:1.05;letter-spacing:.005em;max-width:14ch;text-wrap:balance;
+  font-size:clamp(2.7rem,6.5vw,5rem);line-height:1.04;letter-spacing:.004em;
+  max-width:14ch;text-wrap:balance;
 }
-.hero h1 em{font-style:normal;color:var(--gold);}
+.hero h1 .accent{color:var(--green-lift);}
 .hero-sub{
-  margin-top:26px;max-width:46ch;font-size:1.18rem;font-weight:300;line-height:1.6;color:rgba(233,231,227,0.88);
+  margin-top:28px;max-width:52ch;font-size:1.2rem;font-weight:400;line-height:1.6;
+  color:rgba(233,231,227,0.9);
 }
-.hero-thin{font-size:.85rem;color:var(--muted);margin-top:22px;max-width:60ch;}
-.hero-actions{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap;align-items:center;}
+.hero-sub strong{color:#fff;font-weight:700;}
+.hero-thin{font-size:.86rem;color:var(--dim);margin-top:24px;max-width:62ch;}
+.hero-actions{display:flex;gap:18px;margin-top:38px;flex-wrap:wrap;align-items:center;}
 .btn{
   display:inline-flex;align-items:center;gap:10px;
-  padding:16px 32px;border-radius:10px;font-weight:700;font-size:.95rem;text-decoration:none;
+  padding:17px 34px;border-radius:10px;font-weight:700;font-size:.95rem;text-decoration:none;
   border:1px solid transparent;transition:all .3s;letter-spacing:.01em;cursor:pointer;
 }
 .btn-primary{background:var(--green);color:#fff;box-shadow:0 8px 22px rgba(13,143,100,0.28);}
 .btn-primary:hover{background:#0ca06f;box-shadow:0 8px 26px rgba(13,143,100,0.4);transform:translateY(-1px);}
-.btn-ghost{border-color:rgba(255,255,255,0.3);color:#fff;background:transparent;}
-.btn-ghost:hover{border-color:var(--teal-lift);color:var(--teal-lift);}
+.btn-ghost{border-color:rgba(255,255,255,0.32);color:#fff;background:transparent;}
+.btn-ghost:hover{border-color:var(--green-lift);color:var(--green-lift);}
 .hero-stats{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:70px;
-  border-top:1px solid rgba(255,255,255,0.12);padding-top:30px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:74px;
+  border-top:1px solid var(--hairline);padding-top:34px;
 }
-.hstat .n{font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.4rem);color:#fff;line-height:1.1;}
-.hstat .n sup{font-size:.5em;color:var(--gold);}
-.hstat .l{font-size:.78rem;color:var(--muted);letter-spacing:.02em;margin-top:8px;text-transform:uppercase;font-weight:700;}
+.hstat .n{font-family:var(--font-head);font-size:clamp(1.7rem,3.2vw,2.5rem);color:#fff;line-height:1.1;font-variant-numeric:tabular-nums;}
+.hstat .n sup{font-size:.55em;color:var(--green-lift);}
+.hstat .l{font-size:.74rem;color:var(--dim);letter-spacing:.05em;margin-top:9px;text-transform:uppercase;font-weight:700;}
 
 /* ---------- SECTION COMMON ---------- */
-.section{padding:110px 0;}
-.section.light{background:var(--white);color:#263335;}
+.section{padding:116px 0;}
+.section.light{background:#fdfdfc;color:#263335;}
 .section.warm{background:#eef0ec;}
-.section.teal{background:linear-gradient(180deg,#0d2d2e 0%,#123a3b 50%,#0d2d2e 100%);}
-.section .eyebrow{color:var(--teal);}
-.section.teal .eyebrow{color:var(--teal-lift);}
-.sec-h{font-family:var(--font-head);font-weight:400;font-size:clamp(1.8rem,3.6vw,2.9rem);line-height:1.16;max-width:22ch;text-wrap:balance;color:inherit;}
-.section.teal .sec-h{color:#fff;}
-.sec-lead{max-width:60ch;margin-top:20px;font-size:1.08rem;color:inherit;opacity:.88;}
-.sec-intro{margin-bottom:56px;}
+.section.teal{background:var(--dark-grad);}
+.section .eyebrow{color:var(--green);}
+.section.teal .eyebrow{color:var(--green-lift);}
+.sec-h{
+  font-family:var(--font-head);font-weight:400;
+  font-size:clamp(1.85rem,3.6vw,2.95rem);line-height:1.16;max-width:24ch;text-wrap:balance;color:inherit;
+}
+.sec-lead{max-width:64ch;margin-top:22px;font-size:1.1rem;color:inherit;opacity:.86;}
+.sec-intro{margin-bottom:60px;}
+@media (max-width:640px){.section{padding:80px 0;}}
 
 /* ---------- PROPOSITION ---------- */
-.props{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.props{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
 .prop{
-  background:#fff;border-radius:14px;padding:34px 30px;border:1px solid rgba(0,0,0,0.07);
-  box-shadow:0 2px 12px rgba(0,0,0,0.04);transition:transform .3s, box-shadow .3s;
+  background:#fff;border-radius:14px;padding:38px 32px;border:1px solid rgba(0,0,0,0.07);
+  box-shadow:0 2px 12px rgba(0,0,0,0.04);transition:transform .3s,box-shadow .3s;
 }
-.prop:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(0,0,0,0.09);}
-.prop .num{font-family:var(--font-head);font-size:2.2rem;color:#174445;line-height:1;}
-.prop .num small{font-size:.5em;color:var(--green);}
-.prop h3{font-size:1.08rem;font-weight:900;color:#0e2929;margin-top:16px;letter-spacing:.005em;}
-.prop p{font-size:.95rem;color:#5b6868;margin-top:10px;line-height:1.6;}
+.prop:hover{transform:translateY(-5px);box-shadow:0 16px 38px rgba(0,0,0,0.09);}
+.prop .num{font-family:var(--font-head);font-size:2.4rem;color:var(--heading-ink);line-height:1;}
+.prop .num small{font-size:.5em;color:var(--green);font-family:var(--font-body);}
+.prop h3{font-size:1.15rem;font-weight:700;color:var(--heading-ink);margin-top:18px;letter-spacing:.005em;}
+.prop p{font-size:.97rem;color:#5b6868;margin-top:10px;line-height:1.62;}
 
 /* ---------- FULL WIDTH MEDIA BAND ---------- */
-.band{position:relative;height:78vh;overflow:hidden;display:flex;align-items:flex-end;}
+.band{position:relative;height:80vh;overflow:hidden;display:flex;align-items:flex-end;}
 .band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
-.band .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,17,18,0.15),rgba(10,17,18,0.85));}
-.band .cap{position:relative;z-index:2;padding:40px 28px 60px;width:100%;max-width:var(--maxw);margin:0 auto;}
-.band .cap .b-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-lift);margin-bottom:10px;}
-.band .cap h2{font-family:var(--font-head);font-weight:400;color:#fff;font-size:clamp(1.7rem,3.4vw,2.8rem);max-width:26ch;line-height:1.18;text-wrap:balance;text-shadow:0 2px 16px rgba(0,0,0,.4);}
-.band .cap p{color:rgba(233,231,227,0.9);max-width:60ch;margin-top:14px;font-size:1.05rem;text-shadow:0 1px 8px rgba(0,0,0,.4);}
+.band .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,20,21,0.1),rgba(10,20,21,0.86));}
+.band .cap{position:relative;z-index:2;padding:44px 32px 66px;width:100%;max-width:var(--maxw);margin:0 auto;}
+.band .b-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green-lift);margin-bottom:10px;}
+.band .cap h2{font-family:var(--font-head);font-weight:400;color:#fff;font-size:clamp(1.8rem,3.6vw,3rem);max-width:26ch;line-height:1.16;text-wrap:balance;text-shadow:0 2px 18px rgba(0,0,0,.45);}
+.band .cap p{color:rgba(233,231,227,0.92);max-width:60ch;margin-top:16px;font-size:1.08rem;text-shadow:0 1px 10px rgba(0,0,0,.45);}
+
+/* ---------- THE TABLE ---------- */
+.tbl-note{font-size:.83rem;color:var(--dim);margin-bottom:28px;max-width:76ch;}
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:14px;border:1px solid var(--hairline);background:rgba(255,255,255,0.025);}
+table{width:100%;border-collapse:collapse;min-width:760px;}
+th{
+  text-align:right;padding:17px 18px;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--teal-soft);border-bottom:1px solid var(--hairline);white-space:nowrap;background:rgba(11,32,33,0.6);
+}
+th:first-child{text-align:left;}
+th.resale{color:var(--green-lift);}
+td{
+  text-align:right;padding:17px 18px;border-bottom:1px solid rgba(255,255,255,0.055);
+  font-variant-numeric:tabular-nums;color:#e8eeed;font-size:.98rem;white-space:nowrap;
+}
+td:first-child{text-align:left;font-weight:700;color:#fff;font-family:var(--font-head);font-size:1.06rem;}
+td.pos{color:var(--green-lift);font-weight:700;}
+td.resale{color:var(--teal-soft);}
+td.resale.highlight{color:var(--green-lift);font-weight:700;position:relative;}
+td.resale.highlight .tag{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:var(--green-lift);border-radius:5px;padding:2px 7px;margin-bottom:3px;}
+tr.year-five td{background:rgba(76,194,150,0.08);}
+tr.total-row td{font-weight:700;color:#fff;border-top:2px solid var(--teal-lift);border-bottom:none;}
+tr.total-row td:first-child{color:var(--green-lift);}
+.tbl-footnote{font-size:.8rem;color:var(--dim);margin-top:20px;max-width:82ch;}
+
+.resale-strip{
+  margin-top:34px;display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:28px;align-items:center;
+  padding:34px 36px;border-radius:14px;border:1px solid var(--teal-lift);background:rgba(42,127,128,0.08);
+}
+.resale-cell .rl{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);}
+.resale-cell .rv{font-family:var(--font-head);font-size:clamp(1.7rem,3vw,2.5rem);color:#fff;margin-top:8px;line-height:1;}
+.resale-cell.green .rv{color:var(--green-lift);}
+.resale-cell .rs{font-size:.85rem;color:var(--dim);margin-top:8px;}
+.resale-arrow{color:var(--green-lift);font-size:1.4rem;opacity:.8;}
+
+.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;}
+.summary .card{background:rgba(255,255,255,0.03);border:1px solid var(--hairline);border-radius:14px;padding:34px 30px;text-align:center;}
+.summary .card .lbl{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);}
+.summary .card .val{font-family:var(--font-head);font-size:2.6rem;color:#fff;margin-top:12px;line-height:1;text-wrap:nowrap;}
+.summary .card .val.green{color:var(--green-lift);}
+.summary .card .sub{font-size:.85rem;color:var(--dim);margin-top:12px;}
+.big-result{
+  margin-top:40px;text-align:center;padding:50px 34px;border-radius:16px;
+  background:linear-gradient(135deg,#0c8f63 0%,#0a7a56 100%);
+  box-shadow:0 22px 54px rgba(13,143,100,0.28);
+}
+.big-result .rl{font-size:.74rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.86);}
+.big-result .rv{font-family:var(--font-head);font-size:clamp(2.8rem,5.5vw,4.4rem);color:#fff;margin-top:12px;line-height:1;}
+.big-result .rv-sub{font-family:var(--font-body);font-size:1.05rem;color:rgba(255,255,255,0.95);margin-top:14px;font-weight:700;}
+.big-result .rw{color:rgba(255,255,255,0.92);max-width:60ch;margin:16px auto 0;font-size:1rem;}
 
 /* ---------- KEY PILLARS ---------- */
 .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.pillar{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:34px 28px;}
-.pillar .tag{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-lift);}
+.pillar{background:rgba(255,255,255,0.035);border:1px solid var(--hairline);border-radius:14px;padding:36px 30px;transition:transform .3s,border-color .3s;}
+.pillar:hover{transform:translateY(-4px);border-color:var(--teal-lift);}
+.pillar .tag{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--green-lift);}
 .pillar h3{font-family:var(--font-head);font-weight:400;color:#fff;font-size:1.5rem;margin-top:14px;line-height:1.25;}
-.pillar p{color:var(--muted);font-size:.95rem;margin-top:12px;line-height:1.65;}
+.pillar p{color:var(--mist);font-size:.96rem;margin-top:12px;line-height:1.66;}
 
-/* ---------- THE TABLE ---------- */
-.table-block .wrap{padding-top:30px;}
-.tbl-note{font-size:.82rem;color:var(--muted);margin-bottom:26px;max-width:70ch;}
-.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:14px;}
-table{width:100%;border-collapse:collapse;min-width:640px;background:rgba(255,255,255,0.03);}
-th{
-  text-align:right;padding:16px 18px;font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--teal-lift);border-bottom:1px solid rgba(255,255,255,0.14);white-space:nowrap;
-}
-th:first-child{text-align:left;}
-td{
-  text-align:right;padding:16px 18px;border-bottom:1px solid rgba(255,255,255,0.06);
-  font-variant-numeric:tabular-nums;color:#e8eeed;font-size:.98rem;white-space:nowrap;
-}
-td:first-child{text-align:left;font-weight:700;color:#fff;font-family:var(--font-head);font-size:1.05rem;}
-td.emit{color:var(--white);}
-td stat{color:var(--teal-lift);font-weight:900;}
-td.pos{color:var(--teal-lift);font-weight:900;}
-tr.total-row td{font-weight:900;color:#fff;border-top:2px solid var(--teal);border-bottom:none;}
-tr.total-row td:first-child{color:var(--gold);}
-tfoot td{text-align:right;padding:18px;font-size:.86rem;color:var(--muted);}
-tfoot td:first-child{color:var(--teal-lift);font-weight:700;}
-.tbl-footnote{font-size:.8rem;color:var(--muted);margin-top:20px;max-width:80ch;}
-
-/* Summary cards */
-.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px;}
-.summary .card{background:#123a3b;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:34px 30px;text-align:center;}
-.summary .card .lbl{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
-.summary .card .val{font-family:var(--font-head);font-size:2.6rem;color:#fff;margin-top:12px;line-height:1;text-wrap:nowrap;}
-.summary .card .val.green{color:var(--teal-lift);}
-.summary .card .val.gold{color:var(--gold);}
-.summary .card .sub{font-size:.86rem;color:var(--muted);margin-top:12px;}
-.big-result{
-  margin-top:44px;text-align:center;padding:44px 30px;border-radius:16px;
-  background:linear-gradient(135deg,#0d8f64 0%,#0a7a56 100%);
-  box-shadow:0 20px 50px rgba(13,143,100,0.25);
-}
-.big-result .rl{font-size:.78rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.85);}
-.big-result .rv{font-family:var(--font-head);font-size:clamp(2.6rem,5vw,4rem);color:#fff;margin-top:10px;line-height:1;}
-.big-result .rw{color:rgba(255,255,255,0.92);max-width:58ch;margin:16px auto 0;font-size:1rem;}
-
-/* ---------- ASSUMES ---------- */
-.assumes{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
-.assume-row{display:flex;gap:16px;align-items:flex-start;margin-bottom:22px;}
-.assume-row .dot{width:26px;height:26px;flex:0 0 26px;border-radius:50%;border:2px solid var(--teal);position:relative;margin-top:3px;}
-.assume-row .dot::after{content:"";position:absolute;inset:6px;border-radius:50%;background:var(--teal);}
-.assume-tick{width:30px;height:30px;flex:0 0 30px;border-radius:50%;background:var(--green);color:#fff;font-weight:900;font-size:1rem;display:flex;align-items:center;justify-content:center;margin-top:2px;box-shadow:0 4px 12px rgba(13,143,100,.3);}
-.assumes h3{font-size:1.05rem;font-weight:900;color:#0e2929;margin-bottom:4px;}
-.assumes p{font-size:.95rem;color:#5b6868;line-height:1.6;}
-.assume-note{margin-top:34px;padding:20px 24px;background:#f5f2ec;border-radius:12px;font-size:.9rem;color:#4a5555;border-left:4px solid var(--green);}
+/* ---------- ASSUMPTIONS ---------- */
+.assumes{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.assume-row{display:flex;gap:18px;align-items:flex-start;margin-bottom:26px;}
+.assume-row .dot{width:30px;height:30px;flex:0 0 30px;border-radius:50%;border:2px solid var(--green);position:relative;margin-top:4px;}
+.assume-row .dot::after{content:"";position:absolute;inset:8px;border-radius:50%;background:var(--green);}
+.assumes h3{font-size:1.1rem;font-weight:700;color:var(--heading-ink);margin-bottom:4px;}
+.assumes p{font-size:.98rem;color:#5b6868;line-height:1.62;}
+.assume-note{margin-top:38px;padding:22px 26px;background:#f5f2ec;border-radius:12px;font-size:.9rem;color:#4a5555;border-left:4px solid var(--green);}
 
 /* ---------- CLOSE ---------- */
-.close{text-align:center;}
-.close h2{font-family:var(--font-head);font-weight:400;color:#fff;font-size:clamp(1.9rem,3.6vw,3rem);max-width:22ch;margin:0 auto;line-height:1.2;text-wrap:balance;}
-.close p{color:rgba(233,231,227,0.75);max-width:54ch;margin:22px auto 38px;font-size:1.08rem;}
-.close .btn{font-size:1.05rem;padding:18px 42px;}
+.close{background:linear-gradient(180deg,#0b2021 0%,#0e2628 100%);text-align:center;}
+.close h2{font-family:var(--font-head);font-weight:400;color:#fff;font-size:clamp(1.95rem,3.8vw,3.1rem);max-width:24ch;margin:0 auto;line-height:1.16;text-wrap:balance;}
+.close p{color:var(--mist);max-width:56ch;margin:24px auto 40px;font-size:1.1rem;}
+.close .btn{font-size:1.05rem;padding:19px 44px;}
 
-footer{padding:40px 0;text-align:center;color:var(--muted);font-size:.82rem;border-top:1px solid rgba(255,255,255,0.06);}
-footer .wrap{max-width:var(--maxw);}
-footer a{color:var(--teal-lift);text-decoration:none;}
+footer{padding:44px 0;text-align:center;color:var(--dim);font-size:.82rem;border-top:1px solid var(--hairline);background:var(--ink);}
+footer a{color:var(--green-lift);text-decoration:none;}
 
 /* ---------- RESPONSIVE ---------- */
-@media(max-width:900px){
-  .hero-stats{grid-template-columns:1fr 1fr;gap:24px;}
+@media(max-width:920px){
   .props,.pillars{grid-template-columns:1fr;}
   .summary{grid-template-columns:1fr;}
-  .assumes{grid-template-columns:1fr;}
-  .section{padding:78px 0;}
-  .band{height:64vh;}
+  .assumes{grid-template-columns:1fr;gap:40px;}
+  .resale-strip{grid-template-columns:1fr;gap:22px;text-align:center;}
+  .resale-arrow{transform:rotate(90deg);}
+  .band{height:66vh;}
+  .section{padding:96px 0;}
+  .hero-stats{grid-template-columns:1fr 1fr;gap:22px;}
 }
-@media(max-width:560px){
+@media(max-width:600px){
   .hero-stats{grid-template-columns:1fr;gap:18px;}
-  .hero-car{top:38%;width:170vw;}
-  .hero-content{padding:110px 0 70px;}
+  .hero-car{top:36%;width:178vw;}
+  .hero-content{padding:116px 0 76px;}
+  .brand .meta{display:none;}
 }
 </style>
 </head>
@@ -235,21 +269,78 @@ footer a{color:var(--teal-lift);text-decoration:none;}
 
 <nav id="nav">
   <div class="wrap">
-    <div class="brand">BYD <span>SEAL</span> <span style="color:var(--muted);font-family:var(--font-body);font-weight:400;font-size:.86rem;">&middot; business case</span></div>
+    <div class="brand">BYD <span class="accent">SEAL</span> <span class="meta">&middot; business case</span></div>
     <a class="cta" href="#table">See the numbers</a>
   </div>
 </nav>
 
 <!-- ================= HERO ================= -->
-<section class="hero">
-  <div class="hero-bg"></div>
+<section class="hero" id="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <radialGradient id="g1" cx="30%" cy="20%" r="50%">
+          <stop offset="0%" stop-color="#0d8f64" stop-opacity="0.7"/>
+          <stop offset="100%" stop-color="#0d8f64" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="g2" cx="78%" cy="60%" r="42%">
+          <stop offset="0%" stop-color="#4cc296" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#4cc296" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="g3" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#4cc296" stop-opacity="0.2"/>
+          <stop offset="100%" stop-color="#4cc296" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1200" height="600" fill="url(#g1)"/>
+      <rect width="1200" height="600" fill="url(#g2)"/>
+      <g stroke="white" stroke-width="0.8" opacity="0.22">
+        <line x1="0" y1="120" x2="1200" y2="120"/>
+        <line x1="0" y1="240" x2="1200" y2="240"/>
+        <line x1="0" y1="360" x2="1200" y2="360"/>
+        <line x1="0" y1="480" x2="1200" y2="480"/>
+        <line x1="300" y1="0" x2="300" y2="600"/>
+        <line x1="600" y1="0" x2="600" y2="600"/>
+        <line x1="900" y1="0" x2="900" y2="600"/>
+      </g>
+      <g id="nodes-group" fill="white" opacity="0.5">
+        <circle cx="200" cy="120" r="4"/><circle cx="450" cy="240" r="5"/>
+        <circle cx="700" cy="120" r="3.5"/><circle cx="950" cy="360" r="5"/>
+        <circle cx="150" cy="360" r="3"/><circle cx="550" cy="480" r="4.5"/>
+        <circle cx="850" cy="240" r="3"/><circle cx="350" cy="480" r="5.5"/>
+        <circle cx="1050" cy="120" r="3.5"/><circle cx="100" cy="480" r="3"/>
+        <circle cx="650" cy="360" r="4"/>
+      </g>
+      <g id="accents-group" fill="#4cc296" opacity="0.7">
+        <circle cx="450" cy="240" r="5"/>
+        <circle cx="350" cy="480" r="5.5"/>
+        <circle cx="950" cy="360" r="4.5"/>
+      </g>
+      <g id="paths-group" stroke="white" stroke-width="0.8" opacity="0.2" fill="none">
+        <path d="M200,120 Q325,180 450,240"/>
+        <path d="M450,240 Q575,300 700,120"/>
+        <path d="M700,120 Q825,240 950,360"/>
+        <path d="M150,360 Q250,420 350,480"/>
+        <path d="M350,480 Q450,420 550,480"/>
+        <path d="M550,480 Q600,420 650,360"/>
+        <path d="M850,240 Q900,300 950,360"/>
+        <path d="M450,240 Q500,360 550,480"/>
+        <path d="M650,360 Q750,360 850,240"/>
+        <path d="M350,480 Q500,300 700,120"/>
+      </g>
+      <g id="glow-group">
+        <circle class="glow" cx="450" cy="240" r="120" fill="url(#g3)"/>
+        <circle class="glow" cx="350" cy="480" r="100" fill="url(#g3)"/>
+      </g>
+    </svg>
+  </div>
   <img class="hero-car" src="images/hero.png" alt="BYD SEAL electric sedan in studio cutout">
   <div class="hero-vignette"></div>
   <div class="hero-content wrap">
     <div class="eyebrow reveal">The BYD SEAL &middot; purchased through the SnowArk Unit Trust</div>
-    <h1 class="reveal" style="transition-delay:.1s">The car pays you back <em>every year.</em></h1>
+    <h1 class="reveal" style="transition-delay:.1s">The car pays you back <span class="accent">every year.</span></h1>
     <p class="hero-sub reveal" style="transition-delay:.2s">Buy the SEAL Premium through the business and the government refunds part of the price, untaxes the running costs, and writes the rest off. The result: a $58,400 car that costs you about <strong>$32,400</strong> across its life.</p>
-    <div class="hero-thin reveal" style="transition-delay:.28s">New 2026 SEAL Premium, Atlantis Grey, in stock. Drive-away $58,400. Bundled into one automatic business claim.</p>
+    <div class="hero-thin reveal" style="transition-delay:.28s">New 2026 SEAL Premium, Atlantis Grey, in stock. Drive-away $58,400. Bundled into one automatic business claim.</div>
     <div class="hero-actions reveal" style="transition-delay:.34s">
       <a class="btn btn-primary" href="#table">Show me the tax table</a>
       <a class="btn btn-ghost" href="#why">Why the business buys it</a>
@@ -277,7 +368,7 @@ footer a{color:var(--teal-lift);text-decoration:none;}
         <p>The trust claims the full 1/11th input credit in its first BAS. That is cash back in the trust's pocket, because the SEAL sits under the car limit.</p>
       </div>
       <div class="prop reveal" style="transition-delay:.08s">
-        <div class="num">0<span style="font-size:.4em;color:var(--green);">%</span></div>
+        <div class="num">0<small>%</small></div>
         <h3>No fringe benefits tax</h3>
         <p>Private use of an eligible EV is 100% FBT exempt. The running and charging costs ride along untaxed too. Bigger than it sounds, protected by law.</p>
       </div>
@@ -303,7 +394,7 @@ footer a{color:var(--teal-lift);text-decoration:none;}
 
 <!-- ================= THE TABLE (KEY SELLING POINT) ================= -->
 <section class="section teal" id="table">
-  <div class="wrap table-block">
+  <div class="wrap">
     <div class="sec-intro reveal">
       <div class="eyebrow">The proof, below the fold</div>
       <h2 class="sec-h" style="max-width:30ch;">The tax table. Watch the purchase price come down year by year.</h2>
@@ -322,19 +413,40 @@ footer a{color:var(--teal-lift);text-decoration:none;}
             <th>Rate</th>
             <th>Tax saving @39%</th>
             <th>Closing value</th>
+            <th class="resale">Est. resale value</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>2027</td><td>$53,091</td><td>$7,964</td><td>15%</td><td class="pos">$3,106</td><td>$45,127</td></tr>
-          <tr><td>2028</td><td>$45,127</td><td>$13,538</td><td>30%</td><td class="pos">$5,280</td><td>$31,589</td></tr>
-          <tr><td>2029</td><td>$31,589</td><td>$9,477</td><td>30%</td><td class="pos">$3,696</td><td>$22,112</td></tr>
-          <tr><td>2030</td><td>$22,112</td><td>$6,634</td><td>30%</td><td class="pos">$2,587</td><td>$15,479</td></tr>
-          <tr><td>2031</td><td>$15,479</td><td>$15,479</td><td>pool closes</td><td class="pos">$6,037</td><td>$0</td></tr>
-          <tr class="total-row"><td>Total</td><td></td><td>$53,091</td><td></td><td>$20,706</td><td></td></tr>
+          <tr><td>2027</td><td>$53,091</td><td>$7,964</td><td>15%</td><td class="pos">$3,106</td><td>$45,127</td><td class="resale">~$43,200</td></tr>
+          <tr><td>2028</td><td>$45,127</td><td>$13,538</td><td>30%</td><td class="pos">$5,280</td><td>$31,589</td><td class="resale">~$36,800</td></tr>
+          <tr><td>2029</td><td>$31,589</td><td>$9,477</td><td>30%</td><td class="pos">$3,696</td><td>$22,112</td><td class="resale">~$32,100</td></tr>
+          <tr><td>2030</td><td>$22,112</td><td>$6,634</td><td>30%</td><td class="pos">$2,587</td><td>$15,479</td><td class="resale">~$28,600</td></tr>
+          <tr class="year-five"><td>2031</td><td>$15,479</td><td>$15,479</td><td>pool closes</td><td class="pos">$6,037</td><td>$0</td><td class="resale highlight"><span class="tag">5-yr mark</span><br>~$26,300</td></tr>
+          <tr class="total-row"><td>Total</td><td></td><td>$53,091</td><td></td><td>$20,706</td><td></td><td class="resale"></td></tr>
         </tbody>
       </table>
     </div>
-    <p class="tbl-footnote reveal">*In the final year the remaining pool balance falls under the $20,000 threshold, so the whole balance is written off and the pool closes to zero.</p>
+    <p class="tbl-footnote reveal">*In the final year the remaining pool balance falls under the $20,000 threshold, so the whole balance is written off and the pool closes to zero. That is the book value. "Est. resale value" is the car's <em>market</em> worth in that year, a separate figure, based on AADA/AutoGrab BEV retention (55.5% at three years) and the SEAL's stronger-than-average retention. Figures are indicative, not guaranteed.</p>
+
+    <div class="resale-strip reveal">
+      <div class="resale-cell">
+        <div class="rl">Books at year five</div>
+        <div class="rv">$0</div>
+        <div class="rs">Written down to zero on the trust's balance sheet</div>
+      </div>
+      <div class="resale-arrow">&#8594;</div>
+      <div class="resale-cell green">
+        <div class="rl">The market still pays</div>
+        <div class="rv">~$26,300</div>
+        <div class="rs">Estimated resale at the 5-year mark</div>
+      </div>
+      <div class="resale-arrow">&#8594;</div>
+      <div class="resale-cell green">
+        <div class="rl">True 5-year cost if you sell</div>
+        <div class="rv">~$6,100</div>
+        <div class="rs">Purchase, minus both refunds, minus resale</div>
+      </div>
+    </div>
 
     <div class="summary">
       <div class="card reveal">
@@ -357,7 +469,8 @@ footer a{color:var(--teal-lift);text-decoration:none;}
     <div class="big-result reveal">
       <div class="rl">What the SEAL really costs you</div>
       <div class="rv">~$32,400</div>
-      <div class="rw">One purchase, two automatic refunds, zero fringe benefits tax on private use. The SEAL lands at less than 56 cents on the dollar, and you keep driving it.</div>
+      <div class="rv-sub">while you hold it &middot; or ~$6,100 if you sell it at year five</div>
+      <div class="rw">One purchase, two automatic refunds, zero fringe benefits tax on private use, and a car that still holds real value when the books say zero. The SEAL lands at less than 56 cents on the dollar, and you keep driving it.</div>
     </div>
   </div>
 </section>
@@ -438,7 +551,7 @@ footer a{color:var(--teal-lift);text-decoration:none;}
           </div>
         </div>
         <div class="assume-note">
-          All figures indicative and subject to James West's confirmation of your employment status and the final business-use logbook. Rates are the 2026/27 statutory figures published by the ATO.
+          All figures indicative and subject to James West's confirmation of your employment status and the final business-use logbook. Rates are the 2026/27 statutory figures published by the ATO. Resale values are independent market estimates and are not part of the tax position.
         </div>
       </div>
     </div>
@@ -446,9 +559,9 @@ footer a{color:var(--teal-lift);text-decoration:none;}
 </section>
 
 <!-- ================= CLOSE ================= -->
-<section class="section close" style="background:#0a1112;">
+<section class="section close">
   <div class="wrap reveal">
-    <div class="eyebrow" style="color:var(--teal-lift);">Decision time</div>
+    <div class="eyebrow" style="color:var(--green-lift);">Decision time</div>
     <h2>Buy it through the business. Keep the tax win. Drive the SEAL.</h2>
     <p>One phone call to James confirms the last detail. From there the SEAL is a work expense that pays you back every year.</p>
     <a class="btn btn-primary" href="https://bydautomotive.com.au/seal">View the SEAL on BYD's site</a>
@@ -464,14 +577,12 @@ footer a{color:var(--teal-lift);text-decoration:none;}
 
 <script>
 (function(){
-  // Nav state
   var nav = document.getElementById('nav');
   function onScroll(){
     if(window.scrollY > 40){nav.classList.add('scrolled');}else{nav.classList.remove('scrolled');}
   }
   window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
 
-  // Reveal on scroll
   var reveals = document.querySelectorAll('.reveal');
   if(!('IntersectionObserver' in window)){
     reveals.forEach(function(el){el.classList.add('in');});
@@ -483,7 +594,74 @@ footer a{color:var(--teal-lift);text-decoration:none;}
     }, {threshold:0.15, rootMargin:'0px 0px -8% 0px'});
     reveals.forEach(function(el){io.observe(el);});
   }
+
+  var hero = document.getElementById('hero');
+  var nodesGroup = document.getElementById('nodes-group');
+  var pathsGroup = document.getElementById('paths-group');
+  var accentsGroup = document.getElementById('accents-group');
+  var noMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if(hero && nodesGroup && !noMotion){
+    var baseX = 0, baseY = 0, currentX = 0, currentY = 0;
+
+    function drift(dx, dy, t, phase){
+      return {
+        x: Math.sin(t * 0.0004 + phase) * dx + Math.cos(t * 0.0007 + phase * 1.3) * (dx * 0.5),
+        y: Math.cos(t * 0.0005 + phase) * dy + Math.sin(t * 0.0006 + phase * 0.7) * (dy * 0.5)
+      };
+    }
+
+    function animate(timestamp){
+      currentX += (baseX - currentX) * 0.05;
+      currentY += (baseY - currentY) * 0.05;
+      var px = currentX, py = currentY;
+
+      nodesGroup.setAttribute('transform', 'translate(' + px + ',' + py + ')');
+      pathsGroup.setAttribute('transform', 'translate(' + (px * 0.7) + ',' + (py * 0.7) + ')');
+
+      var d = drift(8, 6, timestamp, 0);
+      accentsGroup.setAttribute('transform',
+        'translate(' + (px * 0.5 + d.x) + ',' + (py * 0.5 + d.y) + ')');
+
+      requestAnimationFrame(animate);
+    }
+
+    hero.addEventListener('mousemove', function(e){
+      var rect = hero.getBoundingClientRect();
+      var cx = rect.left + rect.width / 2, cy = rect.top + rect.height / 2;
+      baseX = (e.clientX - cx) * 0.03;
+      baseY = (e.clientY - cy) * 0.03;
+    });
+    hero.addEventListener('touchmove', function(e){
+      var rect = hero.getBoundingClientRect();
+      var cx = rect.left + rect.width / 2, cy = rect.top + rect.height / 2;
+      baseX = (e.touches[0].clientX - cx) * 0.03;
+      baseY = (e.touches[0].clientY - cy) * 0.03;
+    }, {passive: true});
+    hero.addEventListener('mouseleave', function(){ baseX = 0; baseY = 0; });
+    hero.addEventListener('touchend', function(){ baseX = 0; baseY = 0; });
+
+    requestAnimationFrame(animate);
+  }
+
+  var glows = document.querySelectorAll('.glow');
+  if(glows.length && !noMotion){
+    glows[0].style.animation = 'glowPulse1 6s ease-in-out infinite';
+    glows[1].style.animation = 'glowPulse2 7s ease-in-out infinite';
+  }
 })();
 </script>
+<style>
+@keyframes glowPulse1{
+  0%,100%{opacity:.5;transform:scale(1);}
+  50%{opacity:.9;transform:scale(1.14);}
+}
+@keyframes glowPulse2{
+  0%,100%{opacity:.5;transform:scale(1);}
+  50%{opacity:.8;transform:scale(1.1);}
+}
+#glow-group .glow{transform-origin:450px 240px;}
+#glow-group .glow:nth-child(2){transform-origin:350px 480px;}
+</style>
 </body>
 </html>
